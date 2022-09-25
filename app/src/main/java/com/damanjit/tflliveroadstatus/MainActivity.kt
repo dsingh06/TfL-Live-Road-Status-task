@@ -15,21 +15,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        // This will give access to all the views within tht elayout file.
+        // This will give access to all the views within the layout file.
         val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.resultView.text = "Testing"
-
-        mViewModel.displayName.observe(this
-        ) { change ->
-            binding.resultView.text = change.toString()
-        }
-
-        binding.button.setOnClickListener(View.OnClickListener {
-            mViewModel.getRoadStatus()
-        })
+//
+//        mViewModel.displayName.observe(this
+//        ) { change ->
+//            binding.resultView.text = change.toString()
+//        }
+//
+//        binding.button.setOnClickListener(View.OnClickListener {
+//            mViewModel.getRoadStatus()
+//        })
 
     }
 }
