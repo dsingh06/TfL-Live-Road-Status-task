@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener(View.OnClickListener {
-            mViewModel.getRoadStatus("A406") // TODO - Change it to dynamic type. This is for testing
+            mViewModel.getRoadStatus("a406") // TODO - Change it to dynamic type. This is for testing
         })
 
     }
