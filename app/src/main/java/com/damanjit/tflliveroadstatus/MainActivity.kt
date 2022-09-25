@@ -19,16 +19,14 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.resultView.text = "Testing"
-//
-//        mViewModel.displayName.observe(this
-//        ) { change ->
-//            binding.resultView.text = change.toString()
-//        }
-//
-//        binding.button.setOnClickListener(View.OnClickListener {
-//            mViewModel.getRoadStatus()
-//        })
+        mViewModel.displayName.observe(this
+        ) { change ->
+            binding.resultView.text = change.toString()
+        }
+
+        binding.button.setOnClickListener(View.OnClickListener {
+            mViewModel.getRoadStatus()
+        })
 
     }
 }
