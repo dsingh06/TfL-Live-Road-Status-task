@@ -56,9 +56,14 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
     private fun hideKeyboard() {
-        val imm: InputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        try{
+            val imm: InputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        } catch (e: java.lang.NullPointerException){
+
+        }
     }
 
     private fun validateString(text: String?): String {
