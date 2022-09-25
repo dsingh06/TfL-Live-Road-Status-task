@@ -40,20 +40,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener(View.OnClickListener {
-            val good = validateString(binding.textInput.text.toString())
-            if (good) {
+            val errorString:String = validateString(binding.textInput.text.toString())
+            if (errorString.isBlank()) {
                 mViewModel.getRoadStatus(binding.textInput.text.toString())
             } else {
-                binding.textInput.error = "Field cannot be empty"
-
+                binding.textInput.error = errorString
             }
         })
 
     }
 
-    private fun validateString(text: String?): Boolean {
-        var result = false
-        if (text == null || text.isBlank()) result = false
+    private fun validateString(text: String?): String {
+        var result = ""
+        if (text == null || text.isBlank()){
+            result = "Field cannot be empty"
+            return result
+        }
+        val regex = "^[1-9A-Za-z]*$".toRegex()
+        if (!regex.matches(text)) result = "Only letters and numbers are allowed"
         return result;
     }
 }
