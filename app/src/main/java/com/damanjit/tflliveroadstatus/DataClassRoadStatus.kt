@@ -1,0 +1,1 @@
+package com.damanjit.tflliveroadstatusdata class DataClassRoadStatus(    val id: String="",    val displayName: String="",    val statusSeverity: String="",    val statusSeverityDescription: String="",)

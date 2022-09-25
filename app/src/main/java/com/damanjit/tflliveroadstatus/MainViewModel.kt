@@ -1,0 +1,1 @@
+package com.damanjit.tflliveroadstatusimport androidx.lifecycle.ViewModelclass MainViewModel: ViewModel() {}
