@@ -1,1 +1,1 @@
-package com.damanjit.tflliveroadstatusdata class DataClassRoadStatus(    val displayName: String="",    val statusSeverity: String="",    val statusSeverityDescription: String="",    val httpStatusCode:Int=Int.MIN_VALUE,    val message:String="")
+package com.damanjit.tflliveroadstatusdata class DataClassRoadStatus(    val displayName: String="",    val statusSeverity: String="",    val statusSeverityDescription: String="",    // In case of error the following will be populated    val httpStatusCode:Int=Int.MIN_VALUE,    val message:String="")
