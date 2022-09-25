@@ -1,5 +1,6 @@
 package com.damanjit.tflliveroadstatus
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // This will give access to all the views within the layout file.
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
