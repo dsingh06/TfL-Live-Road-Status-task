@@ -2,6 +2,7 @@ package com.damanjit.tflliveroadstatus
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
@@ -39,8 +40,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener(View.OnClickListener {
-            mViewModel.getRoadStatus("a406") // TODO - Change it to dynamic type. This is for testing
+            val good = validateString(binding.textInput.text.toString())
+            if (good) {
+                mViewModel.getRoadStatus(binding.textInput.text.toString())
+            } else {
+                binding.textInput.error = "Field cannot be empty"
+
+            }
         })
 
+    }
+
+    private fun validateString(text: String?): Boolean {
+        var result = false
+        if (text == null || text.isBlank()) result = false
+        return result;
     }
 }
